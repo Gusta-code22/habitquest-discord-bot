@@ -1,6 +1,5 @@
 package br.com.Gusta_code22.command;
 
-import br.com.Gusta_code22.dto.MessageResponseDTO;
 import br.com.Gusta_code22.service.DiscordLinkService;
 import lombok.RequiredArgsConstructor;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
