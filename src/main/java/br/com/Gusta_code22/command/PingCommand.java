@@ -10,7 +10,7 @@ public class PingCommand extends ListenerAdapter {
     public void execute(SlashCommandInteractionEvent event){
         Long latency = event.getJDA().getGatewayPing();
 
-        event.reply("🏓 Pong! Latência: " + latency + "ms")
+        event.reply("🏓 Pong! Latência: " + latency + " ms")
                 .queue();
     }
 }

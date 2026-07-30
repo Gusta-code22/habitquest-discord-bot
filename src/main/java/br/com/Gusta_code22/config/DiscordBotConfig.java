@@ -22,7 +22,6 @@ public class DiscordBotConfig {
 
     @Bean
     public JDA jda() throws InterruptedException {
-        // Inicializa o JDA com o Token e as intents que ativamos no portal do Discord
         return JDABuilder.createDefault(botToken)
                 .enableIntents(
                         GatewayIntent.GUILD_MESSAGES,

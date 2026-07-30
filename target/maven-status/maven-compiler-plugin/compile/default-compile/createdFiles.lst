@@ -1,0 +1,9 @@
+br\com\Gusta_code22\config\DiscordBotConfig.class
+br\com\Gusta_code22\service\ApiStatusService.class
+br\com\Gusta_code22\client\HabitQuestApiClient.class
+br\com\Gusta_code22\listener\ReadyListener.class
+br\com\Gusta_code22\Startup.class
+br\com\Gusta_code22\command\PingCommand.class
+br\com\Gusta_code22\listener\SlashCommandListener.class
+br\com\Gusta_code22\command\ApiCommand.class
+br\com\Gusta_code22\dto\HealthResponse.class

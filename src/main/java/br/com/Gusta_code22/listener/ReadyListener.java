@@ -4,6 +4,7 @@ import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
@@ -24,7 +25,13 @@ public class ReadyListener extends ListenerAdapter {
 
         guild.updateCommands()
                 .addCommands(
-                        Commands.slash("ping", "Responde com Pong!")
+                        Commands.slash("ping", "Responde com Pong!"),
+                        Commands.slash("api","Situação da API"),
+                        Commands.slash("vincular", "Vincula sua conta do HabitQuest")
+                                .addOption(OptionType.STRING,
+                                        "user-id",
+                                        "Seu ID do HabitQuest",
+                                        true)
                 )
                 .queue();
 
