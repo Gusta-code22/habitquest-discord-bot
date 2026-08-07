@@ -33,7 +33,7 @@ public class ReadyListener extends ListenerAdapter {
                                         "user-id",
                                         "Seu ID do HabitQuest",
                                         true),
-                        Commands.slash("desenvolvedor", "Nome de quem Desenvolvel esse sistema")
+                        Commands.slash("desenvolvedor", "Nome de quem Desenvolveu esse sistema")
 
                 )
                 .queue();
