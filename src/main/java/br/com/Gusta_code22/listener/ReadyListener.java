@@ -4,6 +4,7 @@ import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.commands.Command;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import org.jetbrains.annotations.NotNull;
@@ -31,7 +32,9 @@ public class ReadyListener extends ListenerAdapter {
                                 .addOption(OptionType.STRING,
                                         "user-id",
                                         "Seu ID do HabitQuest",
-                                        true)
+                                        true),
+                        Commands.slash("desenvolvedor", "Nome de quem Desenvolvel esse sistema")
+
                 )
                 .queue();
 

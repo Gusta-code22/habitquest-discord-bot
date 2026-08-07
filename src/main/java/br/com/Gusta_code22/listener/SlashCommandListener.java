@@ -1,6 +1,7 @@
 package br.com.Gusta_code22.listener;
 
 import br.com.Gusta_code22.command.ApiCommand;
+import br.com.Gusta_code22.command.DesenvolvedorCommand;
 import br.com.Gusta_code22.command.DiscordLinkCommand;
 import br.com.Gusta_code22.command.PingCommand;
 import br.com.Gusta_code22.service.DiscordLinkService;
@@ -17,6 +18,7 @@ public class SlashCommandListener extends ListenerAdapter {
     private final PingCommand pingCommand;
     private final ApiCommand apiCommand;
     private final DiscordLinkCommand discordLinkCommand;
+    private final DesenvolvedorCommand desenvolvedorCommand;
 
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
@@ -30,9 +32,15 @@ public class SlashCommandListener extends ListenerAdapter {
             case "api":
                 apiCommand.execute(event);
                 break;
+
             case "vincular":
                 discordLinkCommand.execute(event);
                 break;
+
+            case "desenvolvedor":
+                desenvolvedorCommand.execute(event);
+                break;
+
 
         }
     }
