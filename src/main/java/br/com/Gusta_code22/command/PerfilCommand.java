@@ -27,7 +27,7 @@ public class PerfilCommand extends ListenerAdapter {
             embed.setTitle("👤 Perfil");
 
             embed.setDescription(
-                    "👤 Nome: " + perfil.username() + "\n\n" +
+                    "👤 Nome: " + perfil.nome() + "\n\n" +
                             "⭐ Nível: " + perfil.nivel() + "\n\n" +
                             "⚡ XP: " + perfil.xp()
             );
