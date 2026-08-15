@@ -1,9 +1,6 @@
 package br.com.Gusta_code22.listener;
 
-import br.com.Gusta_code22.command.ApiCommand;
-import br.com.Gusta_code22.command.DesenvolvedorCommand;
-import br.com.Gusta_code22.command.DiscordLinkCommand;
-import br.com.Gusta_code22.command.PingCommand;
+import br.com.Gusta_code22.command.*;
 import br.com.Gusta_code22.service.DiscordLinkService;
 import lombok.RequiredArgsConstructor;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -19,6 +16,7 @@ public class SlashCommandListener extends ListenerAdapter {
     private final ApiCommand apiCommand;
     private final DiscordLinkCommand discordLinkCommand;
     private final DesenvolvedorCommand desenvolvedorCommand;
+    private final PerfilCommand perfilCommand;
 
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
@@ -39,6 +37,9 @@ public class SlashCommandListener extends ListenerAdapter {
 
             case "desenvolvedor":
                 desenvolvedorCommand.execute(event);
+                break;
+            case "perfil":
+                perfilCommand.execute(event);
                 break;
 
 
