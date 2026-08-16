@@ -17,6 +17,7 @@ public class SlashCommandListener extends ListenerAdapter {
     private final DiscordLinkCommand discordLinkCommand;
     private final DesenvolvedorCommand desenvolvedorCommand;
     private final PerfilCommand perfilCommand;
+    private final HabitCommand habitCommand;
 
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
@@ -40,6 +41,9 @@ public class SlashCommandListener extends ListenerAdapter {
                 break;
             case "perfil":
                 perfilCommand.execute(event);
+                break;
+            case "habitos":
+                habitCommand.execute(event);
                 break;
 
 
