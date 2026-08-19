@@ -15,13 +15,15 @@ public interface HabitQuestApiClient {
     @GetMapping("/actuator/health")
     HealthResponse getHealth();
 
-    @PostMapping("/discord/link")
-    MessageResponseDTO link(@RequestBody DiscordLinkDTO dto);
-
     @GetMapping("/discord/perfil/{discordId}")
     UserProfileDTO perfil(@PathVariable String discordId);
 
     @GetMapping("/discord/habit/{discordId}")
-    List<HabitResponseDTO> habit(@PathVariable String discordId);
+    List<HabitResponseDTO> getHabit(@PathVariable String discordId);
 
+    @PostMapping("/discord/link")
+    MessageResponseDTO link(@RequestBody DiscordLinkDTO dto);
+
+    @PostMapping("/discord/habit")
+    HabitResponseDTO createHabit(@RequestBody HabitCreateDTO dto);
 }

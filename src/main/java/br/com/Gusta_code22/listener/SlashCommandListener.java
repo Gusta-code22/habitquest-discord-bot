@@ -18,6 +18,7 @@ public class SlashCommandListener extends ListenerAdapter {
     private final DesenvolvedorCommand desenvolvedorCommand;
     private final PerfilCommand perfilCommand;
     private final HabitCommand habitCommand;
+    private final CreateHabitCommand createHabitCommand;
 
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
@@ -44,6 +45,9 @@ public class SlashCommandListener extends ListenerAdapter {
                 break;
             case "habitos":
                 habitCommand.execute(event);
+                break;
+            case "criar-habito":
+                createHabitCommand.execute(event);
                 break;
 
 

@@ -35,7 +35,16 @@ public class ReadyListener extends ListenerAdapter {
                                         true),
                         Commands.slash("desenvolvedor", "Nome de quem Desenvolveu esse sistema"),
                         Commands.slash("perfil", "Exibe as informações do usuário"),
-                        Commands.slash("habitos","Exibe todos os Hábitos deste usuário")
+                        Commands.slash("habitos","Exibe todos os Hábitos deste usuário"),
+                        Commands.slash("criar-habito", "Cria um novo habito")
+                                .addOption(OptionType.STRING,
+                                        "nome",
+                                        "Nome do habito",
+                                        true)
+                                .addOption(OptionType.STRING,
+                                        "descricao",
+                                        "Descricao do habito",
+                                        false)
 
                 )
                 .queue();
