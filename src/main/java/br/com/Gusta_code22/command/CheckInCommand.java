@@ -47,6 +47,7 @@ public class CheckInCommand extends ListenerAdapter {
                 .filter(habit -> habit.nome()
                         .toUpperCase()
                         .contains(textoDigitado.toUpperCase()))
+                .filter(habit -> !service.jaTemCheckinHoje(habit.id()))
                 .map(habit -> new Command.Choice(habit.nome(),
                         habit.id().toString()))
                 .toList();

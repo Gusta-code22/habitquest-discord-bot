@@ -21,6 +21,9 @@ public interface HabitQuestApiClient {
     @GetMapping("/discord/habit/{discordId}")
     List<HabitResponseDTO> getHabit(@PathVariable String discordId);
 
+    @GetMapping("/discord/checkin-today/{id}")
+    boolean hasCheckedInToday(@PathVariable Long id);
+
     @PostMapping("/discord/link")
     MessageResponseDTO link(@RequestBody DiscordLinkDTO dto);
 

@@ -64,4 +64,7 @@ public class CheckInService {
             }
         }
     }
+    public boolean jaTemCheckinHoje(Long id){
+        return client.hasCheckedInToday(id);
+    }
 }
