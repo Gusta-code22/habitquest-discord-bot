@@ -44,7 +44,15 @@ public class ReadyListener extends ListenerAdapter {
                                 .addOption(OptionType.STRING,
                                         "descricao",
                                         "Descricao do habito",
-                                        false)
+                                        false),
+                        Commands.slash("check-in", "Faz check-in em algum hábito")
+                                .addOption(
+                                        OptionType.STRING,
+                                        "habit",
+                                        "Escolha o hábito",
+                                        true,
+                                        true
+                                )
 
                 )
                 .queue();

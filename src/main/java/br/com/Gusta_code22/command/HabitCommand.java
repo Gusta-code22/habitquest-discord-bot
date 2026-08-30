@@ -41,9 +41,12 @@ public class HabitCommand extends ListenerAdapter {
             );
 
             for (HabitResponseDTO habit : habits) {
+                String descricaoHabit = habit.description() != null
+                        ? habit.description()
+                        : "Sem descrição";
                 embed.addField(
                         "☕ **" + habit.nome() + "**",
-                        "💬 " + habit.description() +
+                        "💬 " + descricaoHabit +
                                 "\n🔥 Streak: **" + habit.streak() + " dia" +
                                 (habit.streak() == 1 ? "" : "s") + "**",
                         false

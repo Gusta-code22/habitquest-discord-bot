@@ -1,5 +1,6 @@
 package br.com.Gusta_code22.config;
 
+import br.com.Gusta_code22.listener.AutoCompleteListener;
 import br.com.Gusta_code22.listener.ReadyListener;
 import br.com.Gusta_code22.listener.SlashCommandListener;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,7 @@ public class DiscordBotConfig {
 
     private final ReadyListener readyListener;
     private final SlashCommandListener slashCommandListener;
+    private final AutoCompleteListener autoCompleteListener;
 
     @Value("${discord.token}")
     private String botToken;
@@ -28,7 +30,7 @@ public class DiscordBotConfig {
                         GatewayIntent.GUILD_MEMBERS,
                         GatewayIntent.MESSAGE_CONTENT
                 )
-                .addEventListeners(readyListener,  slashCommandListener)
+                .addEventListeners(readyListener,  slashCommandListener, autoCompleteListener)
                 .build()
                 .awaitReady(); // Espera o bot conectar 100% antes de liberar o sistema
     }

@@ -26,4 +26,9 @@ public interface HabitQuestApiClient {
 
     @PostMapping("/discord/habit")
     HabitResponseDTO createHabit(@RequestBody HabitCreateDTO dto);
+
+    @PostMapping("/discord/executions")
+    ExecutionResponseDTO checkIn(@RequestBody ExecutionDiscordDTO dto);
+
+
 }
