@@ -26,22 +26,7 @@ public class CheckInCommand extends ListenerAdapter {
         String discordId = event.getUser().getId();
 
         List<HabitResponseDTO> habits = service.getHabits(discordId);
-
-        for (HabitResponseDTO habit : habits) {
-            System.out.println(
-                    "Hábito: " + habit.nome() + " | ID: " + habit.id()
-            );
-        }
-
         String textoDigitado = event.getFocusedOption().getValue();
-        System.out.println("Texto: " + textoDigitado);
-        System.out.println("Quantidade de hábitos: " + habits.size());
-
-        for (HabitResponseDTO habit : habits) {
-            System.out.println(
-                    "Hábito: " + habit.nome() + " | ID: " + habit.id()
-            );
-        }
 
         List<Command.Choice> choices = habits.stream()
                 .filter(habit -> habit.nome()
