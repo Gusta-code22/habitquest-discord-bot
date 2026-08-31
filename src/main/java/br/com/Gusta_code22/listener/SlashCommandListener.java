@@ -20,6 +20,7 @@ public class SlashCommandListener extends ListenerAdapter {
     private final HabitCommand habitCommand;
     private final CreateHabitCommand createHabitCommand;
     private final CheckInCommand checkInCommand;
+    private final DeleteHabitCommand deleteHabitCommand;
 
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
@@ -53,7 +54,9 @@ public class SlashCommandListener extends ListenerAdapter {
             case "check-in":
                 checkInCommand.execute(event);
                 break;
-
+            case "deletar-habito":
+                deleteHabitCommand.execute(event);
+                break;
         }
     }
 

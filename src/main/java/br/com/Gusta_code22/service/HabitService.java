@@ -1,6 +1,8 @@
 package br.com.Gusta_code22.service;
 
 import br.com.Gusta_code22.client.HabitQuestApiClient;
+import br.com.Gusta_code22.dto.DeleteHabitDTO;
+import br.com.Gusta_code22.dto.DeleteHabitResponseDTO;
 import br.com.Gusta_code22.dto.ErrorResponseDTO;
 import br.com.Gusta_code22.dto.HabitResponseDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -36,6 +38,24 @@ public class HabitService {
 
             } catch (JsonProcessingException ex) {
                 throw new RuntimeException("Não foi possível carregar os habitos.");
+            }
+        }
+    }
+
+    public void deleteHabit(DeleteHabitDTO dto){
+        try {
+            client.deleteHabit(dto);
+        } catch (FeignException e) {
+            try {
+                ErrorResponseDTO error = objectMapper.readValue(
+                        e.contentUTF8(),
+                        ErrorResponseDTO.class
+                );
+
+                throw new RuntimeException(error.errors().getFirst());
+
+            } catch (JsonProcessingException ex) {
+                throw new RuntimeException("Não foi possível deletar o habito.");
             }
         }
     }

@@ -52,6 +52,14 @@ public class ReadyListener extends ListenerAdapter {
                                         "Escolha o hábito",
                                         true,
                                         true
+                                ),
+                        Commands.slash("deletar-habito", "Delete o habito escolhido")
+                                .addOption(
+                                        OptionType.STRING,
+                                        "habit",
+                                        "Escolha o hábito",
+                                        true,
+                                        true
                                 )
 
                 )
